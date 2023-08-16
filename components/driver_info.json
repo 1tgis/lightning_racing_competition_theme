@@ -1,0 +1,105 @@
+{
+    "BlockType": "stack",
+    "Orientation": "Vertical",
+    "Items": [
+        {
+            "BlockType": "text",
+            "Source": "[WINS]",
+            "FontName": "{FontNameWide}",
+            "FontSize": 40,
+            "MarginTop": 15
+        },
+        {
+            "BlockType": "text",
+            "Source": "{DriverInfo.DriverSeason.CountP1}",
+            "FontName": "{FontNameDefault}",
+            "FontSize": 30,
+        },
+
+        {
+            "BlockType": "text",
+            "Source": "[POLES]",
+            "FontName": "{FontNameWide}",
+            "FontSize": 40,
+            "MarginTop": 15
+        },
+        {
+            "BlockType": "text",
+            "Source": "{DriverInfo.DriverSeason.CountQualP1}",
+            "FontName": "{FontNameDefault}",
+            "FontSize": 30,
+        },
+
+        {
+            "BlockType": "text",
+            "Source": "[FASTEST LAPS]",
+            "FontName": "{FontNameWide}",
+            "FontSize": 40,
+            "MarginTop": 15
+        },
+        {
+            "BlockType": "text",
+            "Source": "{DriverInfo.DriverSeason.RaceFastestLapCount}",
+            "FontName": "{FontNameDefault}",
+            "FontSize": 30,
+        },
+        
+        {
+            "BlockType": "text",
+            "Source": "[DNFs]",
+            "FontName": "{FontNameWide}",
+            "FontSize": 40,
+            "MarginTop": 15,
+            "RenderIf": "{DriverInfo.DriverSeason.CountDNF, Converter=EmptyObjectToFalse}",
+        },
+        {
+            "BlockType": "text",
+            "Source": "{DriverInfo.DriverSeason.CountDNF}",
+            "FontName": "{FontNameDefault}",
+            "FontSize": 30,
+            "RenderIf": "{DriverInfo.DriverSeason.CountDNF, Converter=EmptyObjectToFalse}",
+        },
+
+        {
+            "BlockType": "text",
+            "Source": "[BEST FINISH]",
+            "FontName": "{FontNameWide}",
+            "FontSize": 40,
+            "MarginTop": 15
+        },
+        {
+            "BlockType": "text",
+            "Source": "{DriverInfo.DriverSeason.BestPos}",
+            "FontName": "{FontNameDefault}",
+            "FontSize": 30,
+        },
+
+        {
+            "BlockType": "text",
+            "Source": "[CHAMPIONSHIP]",
+            "FontName": "{FontNameWide}",
+            "FontSize": 40,
+            "MarginTop": 15
+        },
+        {
+            "BlockType": "text",
+            "Source": "Pos.: {DriverInfo.DriverSeason.Position}",
+            "FontName": "{FontNameDefault}",
+            "FontSize": 30,
+        },
+        {
+            "BlockType": "text",
+            "Source": "Pts.: {DriverInfo.DriverSeason.Points}",
+            "FontName": "{FontNameDefault}",
+            "FontSize": 30,
+            "RenderIf": "{DriverInfo.DriverSeason.Position, Converter=StringEquals, Parameter=1}"
+        },
+        {
+            "BlockType": "text",
+            "Source": "Pts.: {DriverInfo.DriverSeason.Points} (-{DriverInfo.DriverSeason.PointsToLeaderDiff} to {Season.SeasonLeader.Name})",
+            "FontName": "{FontNameDefault}",
+            "FontSize": 30,
+            "RenderIf": "{DriverInfo.DriverSeason.Position, Converter=StringNotEquals, Parameter=1}"
+        },
+    ]
+}

@@ -1,0 +1,54 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",
+        "Orientation": "Vertical",
+        "Items": [
+            {               
+                "BlockType": "component",
+                "ComponentName": "header_block",
+                "ComponentOptions" :
+                {
+                    "Vars":
+                    {
+                        "header" : "PENALTIES"
+                    }
+                }               
+            },
+            //separator
+            {
+                "Name": "separator",
+                "RenderIf" : "{Event, Converter=EmptyObjectToFalse}",
+                "BlockType": "image",
+                "MarginTop": 4,
+                "MarginLeft": 4,
+                "MarginRight": 4,
+                "MarginBottom": 24,
+                "Width": "*",
+                "Source": "separator.png"
+            },
+
+            //penalties
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "Spacing": 48,
+                "ItemStackOptions": {
+                    "ItemSource": "{Penalties.Penalties}",
+                    "Template": {
+                        "BlockType": "component",
+                        "Width" : "*",
+                        "Background" : "#09FFFFFF",
+                        "ComponentName": "penalty_item",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "Penalty": "{Item}"
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    }
+}

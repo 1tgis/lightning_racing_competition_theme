@@ -1,0 +1,12 @@
+{
+  "ShowPenaltyPointsInStandings": true,
+  "ShowWinnerInCalendar": true,
+  "ShowEventDescriptionInCalendar": true,
+  "ForegroundDefault": "#EBEBEB",
+  "ForegroundAlt": "#0005B5",
+  "ForegroundAlt2": "#0006C2",
+  "ForegroundAlt3": "#0005CF",
+  "ForegroundOSE": "#B57109",
+  "BackgroundOSE": "#DE980A",
+  "BackgroundDefault": "#1A1A1A"
+}
