@@ -42,12 +42,14 @@
             "VerticalAlignment": "Center",
             "FontName": "{FontNameWide}",
             "FontSize": 42,
-            "MarginLeft": 50
+            "MarginTop": 4,
+            "MarginLeft": 70
         },
         {
                                 
             "BlockType": "dock",
             "PaddingRight" : 24,
+            "MarginTop": 4,
             "VerticalAlignment": "Center",
             "HorizontalAlignment": "Right",                              
             "Items": [                                    

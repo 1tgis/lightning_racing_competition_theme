@@ -23,16 +23,16 @@
                     [
                         {                            
                             "BlockType": "text",
-                            "Source": "{Season.LeagueInfo.LeagueName}",                            
-                            "FontName": "{FontNameWide}",
-                            "FontSize": 25
+                            "Source": "{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}",                            
+                            "FontName": "{FontNameStretch}",
+                            "FontSize": 40
                         },
                         {                            
                             "BlockType": "text",
                             "Source": "{Season.Name}",
                             "VerticalAlignment" : "Center",
                             "FontName": "{FontNameWide}",
-                            "FontSize": 20,
+                            "FontSize": 30,
                             "Foreground" : "{ForegroundDefault}"
                         }
                     ]
@@ -52,20 +52,19 @@
 
                         {
                             "BlockType": "text",                            
-                            "VerticalAlignment": "Center",                            
+                            "VerticalAlignment": "Center",                          
                             "Source": "<header>",
-                            "FontName": "{FontNameBold}",
-                            "FontSize": 28
+                            "FontName": "{FontNameStretch}",
+                            "FontSize": 70
                         },
 
                         {                            
                             "BlockType": "text",                                                                         
                             "MarginLeft": 12,
-                            "MarginTop": 4,
                             "VerticalAlignment": "Center",
                             "Source": "<subHeader>",
-                            "FontName": "{FontNameWide}",
-                            "FontSize": 18
+                            "FontName": "{FontNameStretch}",
+                            "FontSize": 26
                         }
                     ]
                 }
@@ -91,18 +90,18 @@
                                 {
                                     "BlockType": "text",
                                     "HorizontalAlignment": "Right",
-                                    "Source": "[Round] {Season.SeasonCurrentNumberEvent} [of] {Season.SeasonOverallNumberEvents}",
+                                    "Source": "[ROUND] {Season.SeasonCurrentNumberEvent} [OF] {Season.SeasonOverallNumberEvents}",
                                     "FontName": "{FontNameWide}",
                                     "Foreground" : "{ForegroundDefault}",
-                                    "FontSize": 18
+                                    "FontSize": 40
                                 },
 
                                 {
                                     "BlockType": "text",
                                     "HorizontalAlignment": "Right",
-                                    "Source": "[Season progress] {Season.SeasonProgressPercent}%",
+                                    "Source": "[SEASON PROGRESS]: {Season.SeasonProgressPercent}%",
                                     "FontName": "{FontNameWide}",                                   
-                                    "FontSize": 18
+                                    "FontSize": 35
                                 }                                
                             ]
                         },
