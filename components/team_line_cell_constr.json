@@ -1,0 +1,74 @@
+{
+    "BlockType": "dock",
+    "PaddingLeft": 12,   
+    "Background": "{Item.Team.Color}",
+    "Items": [
+        //left part
+        {
+            "BlockType": "stack",                    
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Center",
+            "Items": [
+                //logo
+                {
+                    "BlockType": "image",
+                    "MarginLeft" : 12,
+                    "MarginTop": -10,
+                    "Height": 80,
+                    "VerticalAlignment": "Top",
+                    "ImageOptions": {
+                        "Path": "{Item.Team.LogoPath}",
+                        "VerticalAlignment": "Center"
+                    }
+                },
+                {
+                    "BlockType": "image",
+                    "Height": 48,
+                    "MarginLeft": -40,
+                    "VerticalAlignment": "Center",
+                    "ImageOptions": {
+                        "Path": "images/cars/{Item.Team.Name}",
+                        "VerticalAlignment": "Center"
+                    }
+                },              
+            ]
+        },
+        //name
+        {
+            "BlockType": "text",
+            "MaxWidth": 600,                    
+            "Source": "{Item.Team.Name, Converter=StringToUpperString}",
+            "HorizontalAlignment": "Center",
+            "VerticalAlignment": "Center",
+            "FontName": "{FontNameWide}",
+            "FontSize": 42,
+            "MarginLeft": 50
+        },
+        {
+                                
+            "BlockType": "dock",
+            "PaddingRight" : 24,
+            "VerticalAlignment": "Center",
+            "HorizontalAlignment": "Right",                              
+            "Items": [                                    
+                {
+                    "BlockType": "text",
+                    "Source": "{Item.Points}",
+                    "HorizontalAlignment": "Right",
+                    "VerticalAlignment": "Center",
+                    "Foreground" : "{ForegroundDefault}",
+                    "FontName": "{FontNameWide}",
+                    "TextOptionsExtern": "primaryNumber"
+                }
+            ],
+            "Triggers" :
+            [
+                {
+                    "Condition" : "{Standings.IsPositionJumpForTeamsExists}",
+                    "Property" : "PaddingRight",
+                    "Value" : 4
+                }
+            ]
+        }
+    ]
+}

@@ -6,7 +6,8 @@
             {
                 "Name": "bg",
                 "BlockType": "image", 
-                "Source": "bg.png"
+                "Source": "images/bg_constructors.png",
+                "Height": "1300"
             }
         ]
     }
