@@ -24,24 +24,24 @@
                                 "BlockType": "text",
                                 "Opacity": 75,
                                 "MarginBottom": 12,
-                                "Source": "{Season.LeagueInfo.LeagueName}",
-                                "FontName": "{FontNameWide}",
+                                "Source": "{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}",
+                                "FontName": "{FontNameStretch}",
                                 "Foreground": "{BackgroundAlt}",
                                 "FontSize": 40
                             },
                             {
                                 "BlockType": "text",
-                                "Source": "{Season.Name}",
+                                "Source": "{Season.Name, Converter=StringToUpperString}",
                                 "VerticalAlignment": "Center",
-                                "FontName": "{FontNameWide}",
+                                "FontName": "{FontNameStretch}",
                                 "FontSize": 30,
                                 "Foreground": "{BackgroundAlt}"
                             },
                             {
                                 "BlockType": "text",
-                                "Source": "Lineups",
+                                "Source": "LINEUPS",
                                 "VerticalAlignment": "Center",
-                                "FontName": "{FontNameWide}",
+                                "FontName": "{FontNameStretch}",
                                 "FontSize": 30,
                                 "Foreground": "{BackgroundAlt}"
                             }
@@ -190,7 +190,7 @@
                                                             {
                                                                 "Condition": "{Item.Driver.Name, Converter=EmptyObjectToTrue}",
                                                                 "Property": "FontName",
-                                                                "Value": "{FontNameWide}"
+                                                                "Value": "{FontNameStretch}"
                                                             }
                                                         ]
                                                     },

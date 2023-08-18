@@ -22,15 +22,15 @@
                         "Items": [
                             {
                                 "BlockType": "text",
-                                "Source": "{Season.LeagueInfo.LeagueName}",
-                                "FontName": "{FontNameBold}",
+                                "Source": "{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}",
+                                "FontName": "{FontNameStretch}",
                                 "FontSize": 40
                             },
                             {
                                 "BlockType": "text",
-                                "Source": "{Season.Name}",
+                                "Source": "{Season.Name, Converter=StringToUpperString}",
                                 "VerticalAlignment": "Center",
-                                "FontName": "{FontNameWide}",
+                                "FontName": "{FontNameStretch}",
                                 "FontSize": 30,
                                 "Foreground": "{ForegroundDefault}"
                             }
@@ -112,10 +112,10 @@
                                 "BlockType": "text",
                                 "PaddingLeft": 24,
                                 "PaddingRight": 5,
-                                "Source": "[{Item.Track.CountryName}]",
+                                "Source": "[{Item.Track.CountryName, Converter=StringToUpperString}]",
                                 "HorizontalAlignment": "Left",
                                 "VerticalAlignment": "Center",
-                                "FontName": "{FontNameBold}",
+                                "FontName": "{FontNameStretch}",
                                 "Foreground": "{ForegroundDefault}",
                                 "FontSize": 50,
                                 "Background": "{BackgroundDefault}"

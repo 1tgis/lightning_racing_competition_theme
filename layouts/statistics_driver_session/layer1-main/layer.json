@@ -23,20 +23,21 @@
                             {
                                 "BlockType": "stack",
                                 "VerticalAlignment": "Center",
+                                "Orientation": "Vertical",
                                 "Items": [
                                     {
                                         "BlockType": "text",
-                                        "Source": "{Season.LeagueInfo.LeagueName}",
-                                        "FontName": "{FontNameWide}",
-                                        "FontSize": 20
+                                        "Source": "{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}",
+                                        "FontName": "{FontNameStretch}",
+                                        "FontSize": 40
                                     },
                                     {
                                         "BlockType": "text",
-                                        "Source": " · {Season.Name}",
+                                        "Source": "{Season.Name, Converter=StringToUpperString}",
                                         "VerticalAlignment": "Center",
-                                        "FontName": "{FontNameWide}",
-                                        "FontSize": 16,
-                                        "Foreground": "{ForegroundDarker}"
+                                        "FontName": "{FontNameStretch}",
+                                        "FontSize": 30,
+                                        "Foreground": "{ForegroundDefault}"
                                     }
                                 ]
                             },
@@ -45,37 +46,36 @@
                             {
                                 "BlockType": "stack",
                                 "VerticalAlignment": "Center",
-                                "Spacing": 8,
+                                "Orientation": "Horizontal",
+                                "MarginTop": 10,
                                 "Items": [
                                     {
+                                        "BlockType": "text",
+                                        "Foreground": "{ForegroundDefault}",
+                                        "VerticalAlignment": "Center",
+                                        "Source": "{Statistics.Header, Converter=StringToUpperString} FROM",
+                                        "FontName": "{FontNameWide}",
+                                        "FontSize": 30
+                                    },
+                                    {
+                                        "Name": "CountryFlag",
                                         "BlockType": "image",
-                                        "VerticalAlignment": "Center",
-                                        "Height": 48,
-                                        "Source": "statistics_icon.png"
+                                        "VerticalAlignment": "Top",
+                                        "MarginTop": -4,
+                                        "Height": 38,
+                                        "MarginLeft": 8,
+                                        "Source": "{Session.Track.Nation.LogoPath}"
                                     },
-
                                     {
                                         "BlockType": "text",
-                                        "MarginLeft": 12,
+                                        "Foreground": "{ForegroundDefault}",
                                         "VerticalAlignment": "Center",
-                                        "Source": "{Statistics.Header}",
+                                        "Source": " {Session.Track.Nation.Code, Converter=StringToUpperString}",
                                         "FontName": "{FontNameWide}",
-                                        "FontSize": 28
+                                        "FontSize": 30
                                     },
-
-                                    {
-                                        "BlockType": "text",
-                                        //"MarginLeft": 12,
-                                        //"MarginTop": 2,
-                                        "RenderIf": "{Statistics.SubHeader, Converter=EmptyObjectToFalse}",
-                                        "VerticalAlignment": "Center",
-                                        "Source": "  ·  {Statistics.SubHeader}",
-                                        "FontName": "{FontNameWide}",
-                                        "FontSize": 18,
-                                        "Foreground": "{ForegroundDarker}"
-                                    }
                                 ]
-                            }
+                            },
                         ]
                     },
 
@@ -90,92 +90,6 @@
                             {
                                 "BlockType": "stack",
                                 "Items": [
-                                    {
-                                        "BlockType": "stack",
-                                        "Orientation": "Vertical",
-                                        "Spacing": 4,
-                                        "Items": [
-                                            {
-                                                "BlockType": "text",
-                                                "HorizontalAlignment": "Right",
-                                                "Source": "[Round] {Event.Position} [of] {Season.SeasonOverallNumberEvents}",
-                                                "FontName": "{FontNameWide}",
-                                                "FontSize": 18,
-                                                "Foreground": "{ForegroundDarker}"
-                                            },
-
-                                            {
-                                                "BlockType": "stack",
-                                                "HorizontalAlignment": "Right",
-                                                "Items": [
-                                                    {
-                                                        "BlockType": "text",
-                                                        "Source": "[{Session.SessionType}]",
-                                                        "FontName": "{FontNameWide}",
-                                                        "FontSize": 18
-                                                    },
-                                                    //race duration
-                                                    {
-                                                        "BlockType": "text",
-                                                        "RenderIf": false,
-                                                        "Source": " • {Session.TotalLaps} [laps]",
-                                                        "FontName": "{FontNameWide}",
-                                                        "FontSize": 18,
-                                                        "Triggers": [
-                                                            {
-                                                                "Condition": "{Session.IsLiveData}",
-                                                                "ConditionAnd": "{Session.SessionType, Converter=StringEquals, Parameter=Race}",
-                                                                "Property": "RenderIf",
-                                                                "Value": true
-                                                            }
-                                                        ]
-                                                    },
-                                                    //qual, practice duration
-                                                    {
-                                                        "BlockType": "text",
-                                                        "RenderIf": false,
-                                                        "Source": " • {Session.SessionDurationMinutes} [min].",
-                                                        "FontName": "{FontNameWide}",
-                                                        "FontSize": 18,
-                                                        "Triggers": [
-                                                            {
-                                                                "Condition": "{Session.IsLiveData}",
-                                                                "ConditionAnd": "{Session.SessionType, Converter=StringNotEquals, Parameter=Race}",
-                                                                "Property": "RenderIf",
-                                                                "Value": true
-                                                            }
-                                                        ]
-                                                    }
-                                                ]
-                                            },
-
-                                            {
-                                                "BlockType": "stack",
-                                                "HorizontalAlignment": "Right",
-                                                "Spacing": 4,
-                                                "Items": [
-                                                    {
-                                                        "Name": "CountryFlag",
-                                                        "BlockType": "image",
-                                                        "VerticalAlignment": "Center",
-                                                        "Height": 36,
-                                                        "Source": "{Session.Track.Nation.LogoPath}"
-                                                    },
-
-                                                    {
-                                                        "Name": "CountryName",
-                                                        "BlockType": "text",
-                                                        "MarginLeft": 12,
-                                                        "VerticalAlignment": "Center",
-                                                        "Source": "{Session.Track.Nation.Code, Converter=StringToUpperString}",
-                                                        "FontName": "{FontNameWide}",
-                                                        "FontSize": 18
-                                                    }
-                                                ]
-                                            }
-                                        ]
-                                    },
-
                                     {
                                         "Name": "leagueLogo",
                                         "BlockType": "image",
@@ -479,7 +393,7 @@
                         "Height": "*",
                         "Source": "{Statistics.Description}",
                         "TextOptions": {
-                            "FontSize": 16,
+                            "FontSize": 32,
                             "Wrap": true,
                             "HorizontalAlignment": "Left"
                         }

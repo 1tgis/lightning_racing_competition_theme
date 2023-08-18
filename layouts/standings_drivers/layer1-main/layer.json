@@ -146,7 +146,7 @@
                                 "Source": "{Item.PointsString}",
                                 "HorizontalAlignment": "Left",
                                 "TextOptions": {
-                                    "FontName": "{FontNameDefault}",
+                                    "FontName": "{FontNameWide}",
                                     "FontSize": 34,
                                     "HorizontalAlignment": "Center",
                                     "Foreground": "{SeasonProgressPointsForeground}"

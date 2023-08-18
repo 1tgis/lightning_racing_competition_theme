@@ -23,20 +23,21 @@
                             {
                                 "BlockType": "stack",
                                 "VerticalAlignment": "Center",
+                                "Orientation": "Vertical",
                                 "Items": [
                                     {
                                         "BlockType": "text",
-                                        "Source": "{Season.LeagueInfo.LeagueName}",
-                                        "FontName": "{FontNameWide}",
-                                        "FontSize": 20
+                                        "Source": "{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}",
+                                        "FontName": "{FontNameStretch}",
+                                        "FontSize": 40
                                     },
                                     {
                                         "BlockType": "text",
-                                        "Source": " · {Season.Name}",
+                                        "Source": "{Season.Name, Converter=StringToUpperString}",
                                         "VerticalAlignment": "Center",
-                                        "FontName": "{FontNameWide}",
-                                        "FontSize": 16,
-                                        "Foreground": "{ForegroundDarker}"
+                                        "FontName": "{FontNameStretch}",
+                                        "FontSize": 30,
+                                        "Foreground": "{ForegroundDefault}"
                                     }
                                 ]
                             },
@@ -45,36 +46,27 @@
                             {
                                 "BlockType": "stack",
                                 "VerticalAlignment": "Center",
-                                "Spacing": 8,
+                                "MarginTop": 10,
                                 "Items": [
                                     {
-                                        "BlockType": "image",
-                                        "VerticalAlignment": "Center",
-                                        "Height": 48,
-                                        "Source": "statistics_icon.png"
-                                    },
-
-                                    {
                                         "BlockType": "text",
-                                        "MarginLeft": 12,
+                                        "Foreground": "{ForegroundDefault}",
                                         "VerticalAlignment": "Center",
-                                        "Source": "{Statistics.Header}",
+                                        "Source": "{Statistics.Header, Converter=StringToUpperString}",
                                         "FontName": "{FontNameWide}",
-                                        "FontSize": 24
+                                        "FontSize": 30
                                     }
                                 ]
                             },
 
                             {
                                 "BlockType": "text",
-                                "MarginLeft": 68,
-                                //"MarginTop": 2,
                                 "RenderIf": "{Statistics.SubHeader, Converter=EmptyObjectToFalse}",
                                 "VerticalAlignment": "Center",
-                                "Source": "{Statistics.SubHeader}",
+                                "Source": "({Statistics.SubHeader})",
                                 "FontName": "{FontNameWide}",
-                                "FontSize": 18,
-                                "Foreground": "{ForegroundDarker}"
+                                "FontSize": 25,
+                                "Foreground": "{ForegroundDefault}"
                             }
                         ]
                     },
@@ -90,30 +82,6 @@
                             {
                                 "BlockType": "stack",
                                 "Items": [
-                                    {
-                                        "BlockType": "stack",
-                                        "Orientation": "Vertical",
-                                        "Spacing": 8,
-                                        "Items": [
-                                            {
-                                                "BlockType": "text",
-                                                "HorizontalAlignment": "Right",
-                                                "Source": "[Round] {Season.SeasonCurrentNumberEvent} [of] {Season.SeasonOverallNumberEvents}",
-                                                "FontName": "{FontNameWide}",
-                                                "Foreground": "{ForegroundDarker}",
-                                                "FontSize": 18
-                                            },
-
-                                            {
-                                                "BlockType": "text",
-                                                "HorizontalAlignment": "Right",
-                                                "Source": "[Season progress] {Season.SeasonProgressPercent}%",
-                                                "FontName": "{FontNameWide}",
-                                                "FontSize": 18
-                                            }
-                                        ]
-                                    },
-
                                     {
                                         "Name": "leagueLogo",
                                         "BlockType": "image",
@@ -362,7 +330,7 @@
                         "Height": "*",
                         "Source": "{Statistics.Description}",
                         "TextOptions": {
-                            "FontSize": 16,
+                            "FontSize": 32,
                             "Wrap": true,
                             "HorizontalAlignment": "Center"
                         }

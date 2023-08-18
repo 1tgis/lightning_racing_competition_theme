@@ -35,6 +35,6 @@
     "SeasonProgressPointsForeground": "#AFAFAF",
     "SeasonProgressPointsZeroForeground": "#666666",
     "SeasonProgressPointsTopForeground": "#C2C2C2",
-    "SeasonProgressPointsFastestLapForeground": "#C719C7",
-    "SeasonProgressPointsPoleBackground": "#420012"
+    "SeasonProgressPointsFastestLapForeground": "#d500ff",
+    "SeasonProgressPointsPoleBackground": "#0054ff"
 }

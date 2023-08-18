@@ -16,21 +16,22 @@
                 {
                     "BlockType" : "stack",
                     "VerticalAlignment" : "Center",
+                    "Orientation": "Vertical",
                     "Items" :
                     [
                         {                            
                             "BlockType": "text",
-                            "Source": "{Season.LeagueInfo.LeagueName}",                            
-                            "FontName": "{FontNameWide}",
-                            "FontSize": 20
+                            "Source": "{Season.LeagueInfo.LeagueName, Converter=StringToUpperString}",                            
+                            "FontName": "{FontNameStretch}",
+                            "FontSize": 40
                         },
                         {                            
                             "BlockType": "text",
-                            "Source": " · {Season.Name}",
+                            "Source": "{Season.Name, Converter=StringToUpperString}",
                             "VerticalAlignment" : "Center",
-                            "FontName": "{FontNameWide}",
-                            "FontSize": 16,
-                            "Foreground" : "{ForegroundDarker}"
+                            "FontName": "{FontNameStretch}",
+                            "FontSize": 26,
+                            "Foreground" : "{ForegroundDefault}"
                         }
                     ]
                 },                
@@ -55,8 +56,8 @@
                             "BlockType": "text",
                             "MarginLeft": 12,
                             "VerticalAlignment": "Center",
-                            "Source": "{Session.Track.CountryName}",
-                            "FontName": "{FontNameWide}",
+                            "Source": "{Session.Track.CountryName, Converter=StringToUpperString}",
+                            "FontName": "{FontNameStretch}",
                             "FontSize": 28
                         },
 
@@ -66,10 +67,10 @@
                             //"MarginLeft": 12,
                             //"MarginTop": 2,
                             "VerticalAlignment": "Center",
-                            "Source": "  ·  {Session.Track.CircuitName}",
-                            "FontName": "{FontNameWide}",                            
+                            "Source": "| {Session.Track.CircuitName, Converter=StringToUpperString}",
+                            "FontName": "{FontNameStretch}",                            
                             "FontSize": 18,
-                            "Foreground" : "{ForegroundDarker}"
+                            "Foreground" : "{ForegroundDefault}"
                         }
                     ]
                 }
@@ -95,10 +96,10 @@
                                 {
                                     "BlockType": "text",
                                     "HorizontalAlignment": "Right",
-                                    "Source": "[Round] {Event.Position} [of] {Season.SeasonOverallNumberEvents}",
-                                    "FontName": "{FontNameWide}",
+                                    "Source": "[ROUND] {Event.Position} [OF] {Season.SeasonOverallNumberEvents}",
+                                    "FontName": "{FontNameStretch}",
                                     "FontSize": 18,
-                                    "Foreground": "{ForegroundDarker}"
+                                    "Foreground": "{ForegroundDefault}"
                                 },
 
                                 {
@@ -107,16 +108,16 @@
                                     "Items": [
                                         {
                                             "BlockType": "text",
-                                            "Source": "[{Session.SessionType}]",
-                                            "FontName": "{FontNameWide}",
+                                            "Source": "[{Session.SessionType, Converter=StringToUpperString}]",
+                                            "FontName": "{FontNameStretch}",
                                             "FontSize": 18
                                         },
                                         //race duration
                                         {
                                             "BlockType": "text",                                            
                                             "RenderIf": false,
-                                            "Source": " • {Session.TotalLaps} [laps]",
-                                            "FontName": "{FontNameWide}",
+                                            "Source": " | {Session.TotalLaps} [LAPS]",
+                                            "FontName": "{FontNameStretch}",
                                             "FontSize": 18,
                                             "Triggers" : 
                                             [
@@ -132,8 +133,8 @@
                                         {
                                             "BlockType": "text",                                                                                  
                                             "RenderIf": false,
-                                            "Source": " • {Session.SessionDurationMinutes} [min].",
-                                            "FontName": "{FontNameWide}",
+                                            "Source": " | {Session.SessionDurationMinutes, Converter=StringToUpperString} [MIN].",
+                                            "FontName": "{FontNameStretch}",
                                             "FontSize": 18,
                                             "Triggers" : 
                                             [
@@ -164,8 +165,8 @@
                                             "BlockType": "text",
                                             "VerticalAlignment": "Center",
                                             "Source": "{Session.AirTemperatureString}",
-                                            "FontName": "{FontNameWide}",
-                                            "FontSize": 15
+                                            "FontName": "{FontNameStretch}",
+                                            "FontSize": 18
                                         }
                                     ]
                                 }
